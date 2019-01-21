@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="ADI Labs Challenge Submission">
+    <meta name="author" content="Khanh Nghiem">
+
+    <title>Khanh Nghiem</title>
+
+    <!-- CSS and JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <!-- Styling -->
+    <style>
+      .fa {
+          font-size: 25px;
+          width: 40px;
+          height: 40px;
+          padding: 7px;
+          text-align: center;
+          text-decoration: none !important;
+          border-radius: 50%;
+          margin: 5px;
+      }
+
+      .fa:hover {
+          opacity: 0.7;
+          text-decoration: none !important;
+          color: white !important;
+      }
+
+      .fa-facebook {
+        background: #3B5998;
+        color: white;
+      }
+
+      .fa-linkedin {
+        background: #007bb5;
+        color: white;
+      }
+
+      .fa-snapchat-ghost {
+        background: #fffc00;
+        color: white;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+
+      .fa-envelope{
+        background: #dd4b39;
+        color: white;
+      }
+
+      .circle {
+        display: inline-block;
+        width:50px;
+        height:50px;
+        margin: 0px 15px 0px 0px;
+        border-radius:50%;
+        border: solid white 1px;
+      }
+      .circle:hover {
+          opacity: 0.7;
+          cursor: pointer;
+      }
+
+      .blue {
+        background: #0078d7;
+      }
+      .gray {
+        background: #9E9E9E;
+      }
+      .black {
+        background: #000000;
+      }
+      .white {
+        border: solid black 1px;
+      }
+      .row {
+        background: #FFFFFF
+      }
+    </style>
+</head>
+
+<body class="container">
+        <!-- Header -->
+        <div class="container">
+            <div class="row" style="height: 20vh; padding-top: 10px">
+                <div class="col-lg-12 text-center">
+                    <h1 class="section-heading">ADI Labs Challenge</h1>
+                </div>
+            </div>
+            <!-- Body -->
+            <div class="row" style="height: 80vh;">
+                <!-- Left column -->
+                <div class="col-sm-5" >
+                    <div class="text-center">
+                        <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t31.0-1/c259.548.762.762/s240x240/26910921_1657388404328830_2754072549501500805_o.jpg?oh=ba68e8b214afa5df9da3493140ddcdab&oe=5AEEC840" class="img-circle" style="margin-bottom: 10px" alt="">
+                        <h3>Khanh Nghiem</h3>
+                        <p>Visiting student from Connecticut College</p>
+                        <p class="text-muted">Computer Science '19</p>
+
+                        <a href="https://www.facebook.com/van.khanh.nghiem" target="blank" class="fa fa-facebook"></a>
+                        <a href="https://www.linkedin.com/in/khanhnghiem/"  target="blank" class="fa fa-linkedin"></a>
+                        <a href="#" id="opener" class="fa fa-snapchat-ghost "></a>
+                        <a href="mailto:kvn2112@columbia.edu" class="fa fa-envelope"></a>
+                    </div>
+                </div>
+                <!-- Right column -->
+                <div class="col-sm-7">
+                  <div class="text-left">
+                      <h4>Favorite colors (click the bubbles):</h4>
+                      <br>
+                      <div id="blue-btn" class="circle blue"></div>
+                      <div id="gray-btn" class="circle gray"></div>
+                      <div id="black-btn" class="circle black"></div>
+                      <div id="reset" class="circle white"></div>
+
+                      <div id="dialog" title="Snapchat">
+                        <img src="https://i.imgur.com/7b1sc6F.png" width="100%"></img>
+                      </div>
+
+                  </div>
+                </div>
+            </div>
+
+            <!-- jQuery animations -->
+            <script>
+            //Change background color 
+            $(document).ready(function(){
+              $("#reset").hide()
+                $("#blue-btn").click(function(){
+                    $(document.body).removeClass();
+                    $(document.body).addClass("blue");
+                    $("#reset").show()
+                });
+                $("#gray-btn").click(function(){
+                    $(document.body).removeClass();
+                    $(document.body).addClass("gray");
+                    $("#reset").show()
+                });
+                $("#black-btn").click(function(){
+                    $(document.body).removeClass();
+                    $(document.body).addClass("black");
+                    $("#reset").show()
+                });
+                $("#reset").click(function(){
+                    $(document.body).removeClass();
+                    $("#reset").hide()
+                });
+            });
+
+            //Snapchat scanner box
+            $( function() {
+              $( "#dialog" ).dialog({
+                autoOpen: false,
+                show: {
+                  effect: "slide",
+                  duration: 500
+                },
+                hide: {
+                  effect: "puff",
+                  duration: 500
+                }
+              });
+
+              $( "#opener" ).on( "click", function() {
+                $( "#dialog" ).dialog( "open" );
+              });
+            } );
+            </script>
+</body>
+
+</html>
